@@ -4,4 +4,4 @@ services:
 
 script:
   - df -h
-  - docker run -t ubuntu:18.04 bash -c 'df -h && dd if=/dev/zero of=/tmp/test1.img bs=1G count=5 oflag=dsync && ls -lh /tmp && df -h'
+  - docker run -t ubuntu:18.04 bash -c 'df -h && dd if=/dev/zero of=/tmp/test.dump bs=1G count=20 oflag=dsync && ls -lh /tmp && df -h'
