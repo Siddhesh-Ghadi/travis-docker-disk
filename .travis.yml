@@ -1,8 +1,7 @@
 arch: 
   - ppc64le
-  - amd64
-  - arm64
   - s390x
+  - arm64
   
 services:
   - docker
@@ -11,5 +10,5 @@ script:
   - travis_wait 50 sleep 50m &
   - docker pull ubuntu:18.04 &> /dev/null
   - df -h
-  - docker run -t ubuntu:18.04 bash -c 'df -h && dd if=/dev/zero of=/tmp/test.dump bs=1G count=30 oflag=dsync && ls -lh /tmp && df -h'
+  - docker run -t ubuntu:18.04 bash -c 'df -h && dd if=/dev/zero of=/tmp/test.dump bs=1G count=100 oflag=dsync && ls -lh /tmp && df -h'
   - df -h
