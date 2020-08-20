@@ -5,7 +5,5 @@ services:
 script:
   - docker pull ubuntu:18.04 &> /dev/null
   - df -h
-  - docker run -t --rm ubuntu:18.04 bash -c 'df -h && dd if=/dev/zero of=/tmp/test.dump bs=1G count=40 oflag=dsync && ls -lh /tmp && df -h'
-  - df -h
-  - sleep 30s
+  - docker run -t ubuntu:18.04 bash -c 'df -h && dd if=/dev/zero of=/tmp/test.dump bs=1G count=50 oflag=dsync && ls -lh /tmp && df -h'
   - df -h
