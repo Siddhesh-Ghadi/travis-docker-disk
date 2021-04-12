@@ -8,4 +8,4 @@ services:
   - docker
 
 script:
-  - cat /etc/docker/daemon.json
+  - sudo cat /etc/docker/daemon.json
